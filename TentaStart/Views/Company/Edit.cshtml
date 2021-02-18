@@ -1,0 +1,46 @@
+﻿@model TentaStart.ViewModels.EditCompanyVIewModel
+@{
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="card-body">
+
+        <form method="post" asp-controller="Company" asp-action="Edit">
+
+            <div class="form-group">
+                <label asp-for="CompanyName" class="form-control-lable">Namn</label>
+                <input type="text" class="form-control text-wrap:normal" asp-for="CompanyName">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input class="form-control" asp-for="Email">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="City">Stad</label>
+                <input class="form-control" asp-for="City">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Adress">Adress</label>
+                <input class="form-control" asp-for="Adress">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Postalcode">Postkod</label>
+                <input class="form-control" asp-for="Postalcode">
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CompanyType">Företagstyp</label>
+                <select class="form-control"
+                        asp-for="CompanyType"
+                        asp-items="@Model.AllTypes"></select>
+            </div>
+
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>

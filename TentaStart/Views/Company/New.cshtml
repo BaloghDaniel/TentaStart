@@ -1,0 +1,52 @@
+﻿@model TentaStart.ViewModels.NewCompanyViewModel
+@{
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="card-body">
+
+        <form method="post" asp-controller="Company" asp-action="New">
+
+            <div class="form-group">
+                <label asp-for="CompanyName" class="form-control-lable">Namn</label>
+                <input type="text" class="form-control text-wrap:normal" asp-for="CompanyName">
+                <span asp-validation-for="CompanyName"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input class="form-control" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="City">Stad</label>
+                <input class="form-control" asp-for="City">
+                <span asp-validation-for="City"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Adress">Adress</label>
+                <input class="form-control" asp-for="Adress">
+                <span asp-validation-for="Adress"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Postalcode">Postkod</label>
+                <input class="form-control" asp-for="Postalcode">
+                <span asp-validation-for="Postalcode"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CompanyType">Företagstyp</label>
+                <select class="form-control"
+                        asp-for="CompanyType"
+                        asp-items="@Model.AllTypes"></select>
+                <span asp-validation-for="CompanyType"></span>
+            </div>
+
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>
